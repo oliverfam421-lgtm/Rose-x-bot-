@@ -1,0 +1,16 @@
+services:
+  - type: worker
+    name: rose-x-bot
+    runtime: node
+    buildCommand: npm ci
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: CLIENT_ID
+        sync: false
+      - key: GUILD_ID
+        sync: false
+      - key: DATABASE_PATH
+        value: ./data/bot.sqlite
